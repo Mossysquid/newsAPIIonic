@@ -1,0 +1,2 @@
+# newsAPIIonic
+newsAPI with ionic
