@@ -6,11 +6,6 @@ export const routes: Routes = [
     loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
   },
   {
-    path: 'message/:id',
-    loadComponent: () =>
-      import('./view-message/view-message.page').then((m) => m.ViewMessagePage),
-  },
-  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
@@ -18,6 +13,10 @@ export const routes: Routes = [
   {
     path: 'liked-page',
     loadComponent: () => import('./liked-page/liked-page.page').then( m => m.LikedPagePage)
+  },
+  {
+    path: 'full-document',
+    loadComponent: () => import('./full-document/full-document.page').then( m => m.FullDocumentPage)
   },
 ];
 
