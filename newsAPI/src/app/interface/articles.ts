@@ -1,7 +1,15 @@
 export interface Articles {
-    id: number;
-    title: string;
-    description: string;
-    expandedText: string;
+    source: {
+        id: string;
+        name: string;
+        author: string;
+        title: string;
+        description: string;
+        url: string;
+        content: string;
+        }
+}
+
+export interface ExtendedArticles extends Articles {
     liked: boolean;
 }
