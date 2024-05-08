@@ -14,6 +14,7 @@ export class MostLikedComponent  implements OnInit {
   constructor() { }
 articals= [];
   ngOnInit() {
+    //subscribe to the service observable getArticals
     for (let i = 1; i < 20; i++) {
       this.articals.push(`Item ${i}`);
     }
