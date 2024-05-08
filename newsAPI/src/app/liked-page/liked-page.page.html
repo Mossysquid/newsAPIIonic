@@ -2,14 +2,35 @@
   <ion-toolbar>
     <ion-title>LikedPage</ion-title>
   </ion-toolbar>
+  <ion-grid>
+    <ion-row>
+    <ion-col>
+      <ion-item>Liked Cards</ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>Most Liked Cards</ion-item>
+    </ion-col>
+  </ion-row>
+  </ion-grid>
+
 </ion-header>
 
 <ion-content [fullscreen]="true" padding>
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">LikedPage</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <app-user-liked></app-user-liked>
+  <ion-grid>
+    <ion-row>
+      <!-- First Section -->
+      <ion-col>
+        <app-user-liked></app-user-liked>
+
+      </ion-col>
+
+      <!-- Second Section -->
+      <ion-col >
+        
+        <app-most-liked></app-most-liked>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 
