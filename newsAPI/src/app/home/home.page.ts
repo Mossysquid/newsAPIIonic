@@ -1,6 +1,10 @@
+import { trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
-import { RefresherCustomEvent, IonHeader, IonToolbar, IonTitle, IonContent, IonRefresher, IonRefresherContent, IonList } from '@ionic/angular/standalone';
+import { Component, inject, ViewChild, AfterViewInit } from '@angular/core';
+
+
+
+import { RefresherCustomEvent, IonHeader, IonToolbar, IonTitle, IonContent, IonRefresher, IonRefresherContent, IonList, IonButton, IonButtons, IonSearchbar, IonModal, IonInput, IonItem,  } from '@ionic/angular/standalone';
 
 
 @Component({
@@ -8,10 +12,11 @@ import { RefresherCustomEvent, IonHeader, IonToolbar, IonTitle, IonContent, IonR
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [CommonModule, IonHeader, IonToolbar, IonTitle, IonContent, IonRefresher, IonRefresherContent, IonList],
+  imports: [CommonModule, IonHeader, IonToolbar, IonTitle, IonContent, IonRefresher, IonRefresherContent, IonList,IonButton,IonButtons, IonSearchbar,IonModal, IonInput,IonItem, ],
 })
-export class HomePage {
+export class HomePage  {
+  
+  
+  }
 
-  constructor() {}
-
-}
+  
