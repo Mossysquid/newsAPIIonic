@@ -1,3 +1,4 @@
+import { NewsChannels } from './../interface/newsChannels';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Articles } from '../interface/articles';
@@ -11,7 +12,18 @@ export class ArticalsService {
   constructor(
 private http: HttpClient
   ) { }
+  //api call for all articals
   getArticals(): Observable<Articles>{
+    const apiKey = environment.ApiKey;
+  return this.http.get<Articles>(`https://newsapi.org/v2/everything?q=bitcoin&apiKey=${apiKey}`);
+  }
+  //api call for news channels
+  getNewsChannels(): Observable<NewsChannels>{
+    const apiKey = environment.ApiKey;
+  return this.http.get<NewsChannels>(`https://newsapi.org/v2/everything?q=bitcoin&apiKey=${apiKey}`);
+  }
+  //api call for top articals
+  getTopArticals(): Observable<Articles>{
     const apiKey = environment.ApiKey;
   return this.http.get<Articles>(`https://newsapi.org/v2/everything?q=bitcoin&apiKey=${apiKey}`);
   }
