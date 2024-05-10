@@ -1,13 +1,9 @@
 export interface NewsChannels {
-    sources: [
-        {
         id: string;
         name: string;
         description: string;
-        url: string;
+        url: any;
         category: string;
         language: string;
-        country: string;
-        }
-    ];
+        country: string; 
 }

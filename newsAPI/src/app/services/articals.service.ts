@@ -14,14 +14,16 @@ export class ArticalsService {
 private http: HttpClient
   ) { }
   //api call for all articals
-  getArticals(): Observable<Articles>{
+  getArticals(): Observable<Articles[]>{
     const apiKey = environment.ApiKey;
-  return this.http.get<Articles>(`https://newsapi.org/v2/everything?q=bitcoin&apiKey=${apiKey}`);
+  return this.http.get<any>(`https://newsapi.org/v2/everything?q=bitcoin&apiKey=${apiKey}`).pipe(
+    map(data => data.articles)
+  );
   }
   //api call for news channels
-  getNewsChannels(): Observable<NewsChannels>{
+  getNewsChannels(): Observable<NewsChannels[]>{
     const apiKey = environment.ApiKey;
-  return this.http.get<NewsChannels>(`https://newsapi.org/v2/everything?q=bitcoin&apiKey=${apiKey}`);
+  return this.http.get<any>(`https://newsapi.org/v2/everything?q=bitcoin&apiKey=${apiKey}`)
   }
   //api call for top articals
   getTopArticals(): Observable<Articles[]>{

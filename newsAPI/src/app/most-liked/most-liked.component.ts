@@ -24,8 +24,7 @@ articals: Articles[];
      this.ArticalsService.getTopArticals()
      .pipe(
       map(data => this.articals = data)
-     ).subscribe(
-     );
+     ).subscribe();
     console.log(this.articals)
   }
 

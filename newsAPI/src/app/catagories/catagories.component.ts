@@ -1,4 +1,7 @@
+import { NewsChannels } from './../interface/newsChannels';
 import { Component, OnInit } from '@angular/core';
+import { ArticalsService } from './../services/articals.service';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-catagories',
@@ -9,8 +12,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatagoriesComponent  implements OnInit {
 
-  constructor() { }
+  constructor(
+    private ArticalsService: ArticalsService
+  ) { }
+  newsChannels: NewsChannels[];
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.ArticalsService.getNewsChannels()
+    .pipe(
+     map(data => this.newsChannels = data)
+    ).subscribe();
+   console.log(this.newsChannels)
+  }
 
 }
