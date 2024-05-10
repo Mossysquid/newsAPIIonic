@@ -27,6 +27,7 @@ articals: Articles[];
      ).subscribe();
     console.log(this.articals)
   }
+  
 
 }
 //data.articals
