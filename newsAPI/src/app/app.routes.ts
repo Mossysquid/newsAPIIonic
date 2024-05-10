@@ -4,6 +4,11 @@ export const routes: Routes = [
   {
     path: 'home',
     loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
+  
+  },
+  {
+    path: 'searchpage',
+    loadComponent: () => import('./searchpage/searchpage.page').then( m => m.searchpagePage)
   },
   {
     path: '',
@@ -18,5 +23,7 @@ export const routes: Routes = [
     path: 'full-document',
     loadComponent: () => import('./full-document/full-document.page').then( m => m.FullDocumentPage)
   },
+  
+  
 ];
 
