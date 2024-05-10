@@ -4,13 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonGrid, IonCol, IonCard, IonRow, IonItem, IonProgressBar } from '@ionic/angular/standalone';
 import { UserLikedComponent } from "../user-liked/user-liked.component";
 import { MostLikedComponent } from "../most-liked/most-liked.component";
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
     standalone: true,
     selector: 'app-liked-page',
     templateUrl: './liked-page.page.html',
     styleUrls: ['./liked-page.page.scss'],
-    imports: [IonProgressBar, IonItem, IonRow, IonCard, IonCol, IonGrid, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, UserLikedComponent, MostLikedComponent]
+    imports: [IonProgressBar, IonItem, IonRow, IonCard, IonCol, IonGrid, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, UserLikedComponent, MostLikedComponent, NavbarComponent]
 })
 export class LikedPagePage  {
   public progress = 0;
