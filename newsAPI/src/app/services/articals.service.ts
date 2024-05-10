@@ -14,16 +14,18 @@ export class ArticalsService {
 private http: HttpClient
   ) { }
   //api call for all articals
-  getArticals(): Observable<Articles[]>{
-    const apiKey = environment.ApiKey;
-  return this.http.get<any>(`https://newsapi.org/v2/everything?q=bitcoin&apiKey=${apiKey}`).pipe(
-    map(data => data.articles)
-  );
-  }
+    getArticles(page: number, pageSize: number): Observable<Articles[]> {
+      const apiKey = environment.ApiKey;
+      const apiUrl = `https://newsapi.org/v2/everything?q=apple&apiKey=${apiKey}&page=${page}&pageSize=${pageSize}`;
+      return this.http.get<any>(apiUrl).pipe(
+        map(data => data.articles)
+      );
+    }
+
   //api call for news channels
   getNewsChannels(): Observable<NewsChannels[]>{
     const apiKey = environment.ApiKey;
-  return this.http.get<any>(`https://newsapi.org/v2/everything?q=bitcoin&apiKey=${apiKey}`)
+  return this.http.get<any>(`https://newsapi.org/v2/top-headlines/sources?apiKey=${apiKey}`)
   }
   //api call for top articals
   getTopArticals(): Observable<Articles[]>{
@@ -31,5 +33,11 @@ private http: HttpClient
   return this.http.get<any>(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`).pipe(
     map(data => data.articles)
   )
+  }
+  queryArticals(query): Observable<Articles[]>{
+    const apiKey = environment.ApiKey;
+  return this.http.get<any>(`https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`).pipe(
+    map(data => data.articles)
+  );
   }
 }
