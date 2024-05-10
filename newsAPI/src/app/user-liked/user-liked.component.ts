@@ -13,7 +13,7 @@ export class UserLikedComponent  implements OnInit {
   constructor() { }
   articals = [];
   ngOnInit() {
-    for (let i = 1; i < 20; i++) {
+    for (let i = 1; i < 10; i++) {
       this.articals.push(`Item ${i}`);
     }
   }

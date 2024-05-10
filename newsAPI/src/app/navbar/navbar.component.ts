@@ -13,8 +13,8 @@ import { IonProgressBar, IonItem, IonRow, IonCard, IonCol, IonGrid, IonContent, 
   styleUrls: ['./navbar.component.scss'],
   imports: [IonProgressBar, IonItem, IonRow, IonCard, IonCol, IonGrid, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, RouterLinkWithHref, IonList]
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent  {
   constructor() {}
 
-  ngOnInit(): void {}
+  // ngOnInit(): void {}
 }

@@ -1,3 +1,4 @@
+import { NavbarComponent } from './../navbar/navbar.component';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -10,7 +11,7 @@ import { MostLikedComponent } from "../most-liked/most-liked.component";
     selector: 'app-liked-page',
     templateUrl: './liked-page.page.html',
     styleUrls: ['./liked-page.page.scss'],
-    imports: [IonProgressBar, IonItem, IonRow, IonCard, IonCol, IonGrid, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, UserLikedComponent, MostLikedComponent]
+    imports: [IonProgressBar, IonItem, IonRow, IonCard, IonCol, IonGrid, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, UserLikedComponent, MostLikedComponent, NavbarComponent]
 })
 export class LikedPagePage  {
   public progress = 0;

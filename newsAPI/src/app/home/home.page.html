@@ -1,41 +1,28 @@
+
 <ion-header>
   <app-navbar></app-navbar>
-</ion-header>
-
-<ion-header [translucent]="true" >
-
   <ion-button id="open-modal" >Sigh In</ion-button>
-  
   <ion-chip>cars</ion-chip>
   <ion-chip>dogs</ion-chip>
   <ion-chip>frogs</ion-chip>
   <ion-chip>snakes</ion-chip>
   <ion-chip>death</ion-chip>
-  
-  <app-articals>
 
-  </app-articals>
-  
-
-
- 
-  <ion-modal trigger="open-modal" >
-    <ion-header/>
-    <ng-template>
-      <ion-toolbar>
-        <ion-title>
-          <p>login<p>
-         
-        </ion-title>
-      </ion-toolbar>
-     
-       
-    <ng-template/>
-  <ion-modal/>
- 
-  
-<ion-header/>
-
+</ion-header>
 <ion-content [fullscreen]="true" >
-  
+  <app-articals>
+  </app-articals>
 </ion-content>
+<ion-modal trigger="open-modal" >
+  <ion-header/>
+  <ng-template>
+    <ion-toolbar>
+      <ion-title>
+        <p>login<p>
+       
+      </ion-title>
+    </ion-toolbar>
+   
+     
+  <ng-template/>
+<ion-modal/>
