@@ -12,7 +12,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [CommonModule, IonHeader, IonToolbar, IonTitle, IonContent, IonRefresher, IonRefresherContent, IonList,IonButton,IonButtons, IonSearchbar,IonModal, IonInput,IonItem, ArticalsComponent,IonCard, IonChip,IonIcon ],
+  imports: [CommonModule,NavbarComponent, IonHeader, IonToolbar, IonTitle, IonContent, IonRefresher, IonRefresherContent, IonList,IonButton,IonButtons, IonSearchbar,IonModal, IonInput,IonItem, ArticalsComponent,IonCard, IonChip,IonIcon ],
 })
 export class HomePage  {
   

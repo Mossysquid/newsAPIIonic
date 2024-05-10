@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonGrid, IonCol, IonCard, IonRow, IonItem, IonProgressBar } from '@ionic/angular/standalone';
 import { UserLikedComponent } from "../user-liked/user-liked.component";
 import { MostLikedComponent } from "../most-liked/most-liked.component";
-import { NavbarComponent } from '../navbar/navbar.component';
+
 
 
 @Component({
