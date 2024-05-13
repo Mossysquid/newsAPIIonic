@@ -1,7 +1,7 @@
 import { ArticalsService } from './../services/articals.service';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { IonCardTitle, IonCard, IonCardHeader, IonCardSubtitle, IonCardContent, IonButton, IonList, IonItem, IonInfiniteScroll, IonInfiniteScrollContent } from "@ionic/angular/standalone";
+import { IonCardTitle, IonCard, IonCardHeader, IonCardSubtitle, IonCardContent, IonButton, IonList, IonItem, IonInfiniteScroll, IonInfiniteScrollContent, InfiniteScrollCustomEvent } from "@ionic/angular/standalone";
 import { map } from 'rxjs';
 import { Articles } from '../interface/articles';
 
@@ -14,20 +14,31 @@ import { Articles } from '../interface/articles';
   providers: [ArticalsService]
 })
 export class MostLikedComponent  implements OnInit {
+  articles: Articles[] = [];
+  pageNumber = 1; // Initial page number
+  pageSize = 10;
 
   constructor(
-    private ArticalsService: ArticalsService
+    private articalsService: ArticalsService
   ) { }
-articals: Articles[];
   ngOnInit() {
-    //subscribe to the service observable getArticals
-     this.ArticalsService.getTopArticals()
-     .pipe(
-      map(data => this.articals = data)
-     ).subscribe();
-    console.log(this.articals)
+    this.loadArticles();
+ }
+
+ loadArticles() {
+  this.articalsService.getTopArticals(this.pageNumber, this.pageSize).subscribe(data => {
+    if(data) this.articles = data;
+    console.log(data)
+  })
+ }
+
+ loadMoreArticles(event) {
+  this.pageNumber++; // Increment page number
+    this.articalsService.getArticles(this.pageNumber, this.pageSize).subscribe(data => {
+      if(data) this.articles.push(...data); // Append newly loaded articles
+      (event as InfiniteScrollCustomEvent).target.complete(); // Complete the infinite scroll event
+    });
   }
-  
 
 }
 //data.articals

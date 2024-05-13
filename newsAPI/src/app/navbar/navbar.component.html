@@ -23,22 +23,13 @@
 
 
 
-<ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button [routerLink]="['/home']">
-        Home
-      </ion-button>
-      <ion-button [routerLink]="['/liked-page']">
-        Liked
-      </ion-button>
-      <ion-button [routerLink]="['/search-page']">
-        search
-      </ion-button>
+      <ion-button [routerLink]="['/home']">Home</ion-button>
+      <ion-button [routerLink]="['/liked-page']">Liked</ion-button>
+      <ion-button [routerLink]="['/search-page']">Search</ion-button>
     </ion-buttons>
+    <ion-menu-toggle slot="end" class="ion-padding">
+      <ion-menu-button></ion-menu-button>
+  </ion-menu-toggle>
   </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content>

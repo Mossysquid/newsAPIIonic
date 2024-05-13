@@ -1,4 +1,24 @@
 <ion-app>
- 
-  <ion-router-outlet></ion-router-outlet>
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+  <ion-menu  contentId="main-content" side="end">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title slot="start">Catagories</ion-title>
+        <ion-menu-toggle slot="end" class="ion-padding">
+          <ion-menu-button></ion-menu-button>
+        </ion-menu-toggle>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-list>
+        <ion-item>Business</ion-item>
+        <ion-item>General</ion-item>
+        <ion-item>Technology</ion-item>
+        <ion-item>Science</ion-item>
+        <ion-item>Health</ion-item>
+        <ion-item>Entertainment</ion-item>
+        <ion-item>Sports</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
 </ion-app>
