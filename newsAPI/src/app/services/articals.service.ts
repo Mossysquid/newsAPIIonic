@@ -18,7 +18,8 @@ private http: HttpClient
       const apiKey = environment.ApiKey;
       const apiUrl = `https://newsapi.org/v2/everything?q=apple&apiKey=${apiKey}&page=${page}&pageSize=${pageSize}`;
       return this.http.get<any>(apiUrl).pipe(
-        map(data => data.articles)
+        map(data => data.articles),
+        map(articles => articles.filter(article => article.title !== null && article.title !== "[Removed]"))
       );
     }
 
@@ -32,13 +33,15 @@ private http: HttpClient
     const apiKey = environment.ApiKey;
   const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}&page=${page}&pageSize=${pageSize}`
   return this.http.get<any>(apiUrl).pipe(
-    map(data => data.articles)
+    map(data => data.articles),
+    map(articles => articles.filter(article => article.title !== null && article.title !== "[Removed]"))
   );
   }
   queryArticals(query): Observable<Articles[]>{
     const apiKey = environment.ApiKey;
   return this.http.get<any>(`https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`).pipe(
-    map(data => data.articles)
+    map(data => data.articles),
+      map(articles => articles.filter(article => article.title !== null && article.title !== "[Removed]"))
   );
   }
 }
