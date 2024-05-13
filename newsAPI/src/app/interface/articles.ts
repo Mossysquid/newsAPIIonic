@@ -14,6 +14,6 @@ export interface Articles {
    
     }
 
-// export interface ExtendedArticles extends Articles {
-//     liked: boolean
-// }
+export interface ExtendedArticles extends Articles {
+    liked: boolean
+}

@@ -28,11 +28,12 @@ private http: HttpClient
   return this.http.get<any>(`https://newsapi.org/v2/top-headlines/sources?apiKey=${apiKey}`)
   }
   //api call for top articals
-  getTopArticals(): Observable<Articles[]>{
+  getTopArticals(page: number, pageSize: number): Observable<Articles[]>{
     const apiKey = environment.ApiKey;
-  return this.http.get<any>(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`).pipe(
+  const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}&page=${page}&pageSize=${pageSize}`
+  return this.http.get<any>(apiUrl).pipe(
     map(data => data.articles)
-  )
+  );
   }
   queryArticals(query): Observable<Articles[]>{
     const apiKey = environment.ApiKey;

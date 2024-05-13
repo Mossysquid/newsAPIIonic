@@ -26,7 +26,7 @@ export class ArticalsComponent  implements OnInit {
 
  loadArticles() {
   this.articalsService.getArticles(this.pageNumber, this.pageSize).subscribe(data => {
-    this.articles = data;
+    if(data) this.articles = data;
     console.log(data)
   })
  }
@@ -34,7 +34,7 @@ export class ArticalsComponent  implements OnInit {
  loadMoreArticles(event) {
   this.pageNumber++; // Increment page number
     this.articalsService.getArticles(this.pageNumber, this.pageSize).subscribe(data => {
-      this.articles.push(...data); // Append newly loaded articles
+      if(data) this.articles.push(...data); // Append newly loaded articles
       (event as InfiniteScrollCustomEvent).target.complete(); // Complete the infinite scroll event
     });
   }

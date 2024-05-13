@@ -10,7 +10,7 @@ import { ArticalsComponent } from "../articals/articals.component";
     templateUrl: './search-page.page.html',
     styleUrls: ['./search-page.page.scss'],
     standalone: true,
-    imports: [IonSearchbar, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, NavbarComponent, ArticalsComponent]
+    imports: [IonSearchbar, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, NavbarComponent, ArticalsComponent, ]
 })
 export class SearchPagePage{
 
@@ -18,5 +18,21 @@ export class SearchPagePage{
 
   // ngOnInit() {
   // }
-
+// data : [
+//   'Amsterdam',
+//   'Buenos Aires',
+//   'Cairo',
+//   'Geneva',
+//   'Hong Kong',
+//   'Istanbul',
+//   'London',
+//   'Madrid',
+//   'New York',
+//   'Panama City',
+// ]
+//   public results = [...this.data];
+  // handleInput(event) {
+  //   const query = event.target.value.toLowerCase();
+  //   this.results = this.data.filter((d) => d.toLowerCase().indexOf(query) > -1);
+  // }
 }

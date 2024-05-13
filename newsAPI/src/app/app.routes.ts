@@ -16,7 +16,7 @@ export const routes: Routes = [
     loadComponent: () => import('./login/login.page').then( m => m.LoginPage)
   },
   {
-    path: 'Likedpage',
+    path: 'liked-page',
     loadComponent: () => import('./liked-page/liked-page.page').then( m => m.LikedPagePage)
   },
   {

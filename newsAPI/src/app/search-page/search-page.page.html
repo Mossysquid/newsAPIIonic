@@ -1,15 +1,21 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <app-navbar></app-navbar>
     <ion-title>search-page</ion-title>
   </ion-toolbar>
-  <ion-searchbar>
+ <ion-searchbar [debounce]="1000" (ionInput)="handleInput($event)"> -->
     
-  </ion-searchbar>
-</ion-header>
+  <!-- </ion-searchbar> -->
+<!-- </ion-header>
 
 <ion-content [fullscreen]="true">
   
 
+  <app-articals />
+</ion-content> -->
+<ion-header [translucent]="true">
+  <app-navbar></app-navbar>
+  </ion-header>
+  <ion-content [fullscreen]="true">
   <app-articals />
 </ion-content>
