@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-firebase-bd4c5": {
+      "hosting": {
+        "app": [
+          "angular-firebase-bd4c5"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-firebase-bd4c5"
+  }
+}
