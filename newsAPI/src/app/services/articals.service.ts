@@ -11,12 +11,13 @@ import { environment } from '../../environments/environment';
 export class ArticalsService {
 
   constructor(
-private http: HttpClient
+private http: HttpClient,
   ) { }
+ 
   //api call for all articals
-    getArticles(page: number, pageSize: number): Observable<Articles[]> {
+    getArticles(page: number, pageSize: number, query: string): Observable<Articles[]> {
       const apiKey = environment.ApiKey;
-      const apiUrl = `https://newsapi.org/v2/everything?q=apple&apiKey=${apiKey}&page=${page}&pageSize=${pageSize}`;
+      const apiUrl = `https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}&page=${page}&pageSize=${pageSize}`;
       return this.http.get<any>(apiUrl).pipe(
         map(data => data.articles),
         map(articles => articles.filter(article => article.title !== null && article.title !== "[Removed]"))
@@ -37,11 +38,11 @@ private http: HttpClient
     map(articles => articles.filter(article => article.title !== null && article.title !== "[Removed]"))
   );
   }
-  queryArticals(query): Observable<Articles[]>{
-    const apiKey = environment.ApiKey;
-  return this.http.get<any>(`https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`).pipe(
-    map(data => data.articles),
-      map(articles => articles.filter(article => article.title !== null && article.title !== "[Removed]"))
-  );
-  }
+  // queryArticals(query): Observable<Articles[]>{
+  //   const apiKey = environment.ApiKey;
+  // return this.http.get<any>(`https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`).pipe(
+  //   map(data => data.articles),
+  //     map(articles => articles.filter(article => article.title !== null && article.title !== "[Removed]"))
+  // );
+  // }
 }
