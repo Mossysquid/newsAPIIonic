@@ -1,9 +1,12 @@
+import { ArticalsService } from './../services/articals.service';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonSearchbar } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonSearchbar, SearchbarInputEventDetail } from '@ionic/angular/standalone';
 import { NavbarComponent } from "../navbar/navbar.component";
 import { ArticalsComponent } from "../articals/articals.component";
+import { IonSearchbarCustomEvent } from '@ionic/core';
+import { SearchService } from '../services/search.service';
 
 @Component({
     selector: 'app-search-page',
@@ -14,25 +17,10 @@ import { ArticalsComponent } from "../articals/articals.component";
 })
 export class SearchPagePage{
 
-  constructor() { }
+  constructor(private searchService: SearchService) {}
 
-  // ngOnInit() {
-  // }
-// data : [
-//   'Amsterdam',
-//   'Buenos Aires',
-//   'Cairo',
-//   'Geneva',
-//   'Hong Kong',
-//   'Istanbul',
-//   'London',
-//   'Madrid',
-//   'New York',
-//   'Panama City',
-// ]
-//   public results = [...this.data];
-  // handleInput(event) {
-  //   const query = event.target.value.toLowerCase();
-  //   this.results = this.data.filter((d) => d.toLowerCase().indexOf(query) > -1);
-  // }
+  handleInput(event: any): void {
+    const query = event.target.value.trim(); // Trim to remove leading/trailing whitespace
+    this.searchService.updateQuery(query);
+  }
 }

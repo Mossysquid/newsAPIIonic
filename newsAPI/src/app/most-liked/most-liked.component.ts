@@ -17,6 +17,7 @@ export class MostLikedComponent  implements OnInit {
   articles: Articles[] = [];
   pageNumber = 1; // Initial page number
   pageSize = 10;
+query = 'news'; // Initial query
 
   constructor(
     private articalsService: ArticalsService
@@ -34,7 +35,7 @@ export class MostLikedComponent  implements OnInit {
 
  loadMoreArticles(event) {
   this.pageNumber++; // Increment page number
-    this.articalsService.getArticles(this.pageNumber, this.pageSize).subscribe(data => {
+    this.articalsService.getArticles(this.pageNumber, this.pageSize, this.query).subscribe(data => {
       if(data) this.articles.push(...data); // Append newly loaded articles
       (event as InfiniteScrollCustomEvent).target.complete(); // Complete the infinite scroll event
     });
