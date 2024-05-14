@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
-import { IonButton } from '@ionic/angular';
+import { IonContent, IonHeader, IonTitle, IonToolbar,IonButton } from '@ionic/angular/standalone';
+
 
 @Component({
   selector: 'app-login',
@@ -11,11 +11,10 @@ import { IonButton } from '@ionic/angular';
   standalone: true,
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButton]
 })
-export class LoginPage implements OnInit {
+export class LoginPage  {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+
 
 }
